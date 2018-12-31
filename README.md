@@ -1,6 +1,8 @@
 # debian-build-iso
 docker build a custom debian live image
 
+## Write to USB
+- https://unix.stackexchange.com/questions/382817/uefi-bios-bootable-live-debian-stretch-amd64-with-persistence
 
 ## Research/Sources:
 - https://janvrany.github.io/2018/01/fun-with-zfs-part-2-creating-debian-zfs-rescue-usb-image.html
