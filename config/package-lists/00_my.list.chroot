@@ -1,6 +1,6 @@
-spl-dkms
 zfs-dkms
 less
 curl
 wget
 openssh-server
+apt-transport-https

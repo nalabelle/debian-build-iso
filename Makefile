@@ -1,14 +1,15 @@
 #!/bin/bash
-target = bin-x86_64-efi/ipxe.efi bin/ipxe.kpxe bin/undionly.kpxe
-args = 
-imagename = nalabelle/debian-build-iso
+IMAGENAME = nalabelle/debian-build-iso
 ROOT_DIR:=$(shell dirname $(realpath $(lastword $(MAKEFILE_LIST))))
 
 build:
 	mkdir ./result || :
-	docker build -t $(imagename) .
-	docker run -v ${ROOT_DIR}/result/:/result/ $(imagename) $(target) $(args)
+	docker build -t $(IMAGENAME) .
+	# uncomment for interactive
+	docker run --rm -it --privileged -v ${ROOT_DIR}/config:/config -v ${ROOT_DIR}/result:/result --entrypoint /bin/bash ${IMAGENAME}
+	# non-interactive build
+	#docker run --rm --privileged -v ${ROOT_DIR}/config:/config -v ${ROOT_DIR}/result:/result --entrypoint /bin/bash ${IMAGENAME}
 
 clean:
 	rm -rf result/
-	docker rmi -f $(imagename) || :
+	docker rmi -f $(IMAGENAME) || :
