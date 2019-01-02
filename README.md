@@ -5,6 +5,8 @@ __Contains:__
  - docker
  - openssh-server
  - zfs
+ - cifs
+ - More, see [package lists](config/package-lists)
 
 ## Pre-boot setup
 Image expects a zfs dataset at `/state/docker`. Set this up before trying to run docker.
@@ -20,7 +22,7 @@ state/docker    96K  26.9G    96K  /state/docker
 ## Write to USB
 - https://unix.stackexchange.com/questions/382817/uefi-bios-bootable-live-debian-stretch-amd64-with-persistence
 
-## Research/Sources:
+## Research/Sources
 - https://janvrany.github.io/2018/01/fun-with-zfs-part-2-creating-debian-zfs-rescue-usb-image.html
 - https://unix.stackexchange.com/questions/71064/systemd-automate-modprobe-command-at-boot-time
 - https://stackoverflow.com/questions/26406048/debootstrap-inside-a-docker-container
