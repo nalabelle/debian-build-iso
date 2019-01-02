@@ -1,0 +1,4 @@
+{
+    "graph": "/state/docker",
+    "storage-driver": "zfs"
+}
