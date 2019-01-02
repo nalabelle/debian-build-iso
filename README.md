@@ -1,7 +1,14 @@
 # debian-build-iso
 docker build a custom debian live image
 
+__Contains:__
+ - docker
+ - openssh-server
+ - zfs
+
 ## Pre-boot setup
+Image expects a zfs dataset at `/state/docker`. Set this up before trying to run docker.
+
 ~~~
 root@debian:~# zfs list
 NAME           USED  AVAIL  REFER  MOUNTPOINT
