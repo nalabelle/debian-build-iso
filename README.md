@@ -1,5 +1,7 @@
 # debian-build-iso
-docker build a custom debian live image
+Builds a debian live boot image in docker. The general idea here is to set up an immutable boot USB for a docker host on my local network.
+
+I have an internal SSD in the docker host machine, which keeps state. I prefer this over a mount since my NAS isn't configured for HA and likely never will be. I don't install the OS on the state drive due to the relative lack of support for ZFS on Linux. I prefer ZFS for the easy syncing, snapshotting, and cross-platform compatibility with my FreeBSD boxes. Has [provisioning](#provisioning) support for running a script out of the state drive on boot.
 
 __Contains:__
  - docker
@@ -18,6 +20,9 @@ state          612K  26.9G    96K  /state
 state/apps      96K  26.9G    96K  /state/apps
 state/docker    96K  26.9G    96K  /state/docker
 ~~~
+
+## <a name="provisioning">Provisoning</a>
+If `/state/config/provision.sh` exists and is executable, it will be run at boot.
 
 ## Write to USB
 - https://unix.stackexchange.com/questions/382817/uefi-bios-bootable-live-debian-stretch-amd64-with-persistence
