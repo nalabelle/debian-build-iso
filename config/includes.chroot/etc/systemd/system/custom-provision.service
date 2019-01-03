@@ -11,8 +11,6 @@ ConditionFileIsExecutable=/state/config/provision.sh
 Type=oneshot
 ExecStart=/state/config/provision.sh
 TimeoutSec=30
-Restart=on-failure
-RestartSec=30
 
 [Install]
 WantedBy=multi-user.target
