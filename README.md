@@ -18,6 +18,7 @@ root@debian:~# zfs list
 NAME           USED  AVAIL  REFER  MOUNTPOINT
 state          612K  26.9G    96K  /state
 state/apps      96K  26.9G    96K  /state/apps
+state/config   712K  26.9G   632K  /state/config
 state/docker    96K  26.9G    96K  /state/docker
 ~~~
 
