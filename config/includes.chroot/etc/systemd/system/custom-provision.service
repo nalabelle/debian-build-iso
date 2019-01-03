@@ -1,0 +1,18 @@
+[Unit]
+Description=Live Boot Provisioner
+# This service will run onboot provisioning (through ansible etc?) assuming
+# you have a provisioning script in place to start it up.
+# This is useful for things that can't be baked into this image.
+After=network-online.target
+Requires=zfs-import-scan.service
+ConditionFileIsExecutable=/state/config/provision.sh
+
+[Service]
+Type=oneshot
+ExecStart=/state/config/provision.sh
+TimeoutSec=30
+Restart=on-failure
+RestartSec=30
+
+[Install]
+WantedBy=multi-user.target

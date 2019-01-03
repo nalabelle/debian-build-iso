@@ -1,6 +1,10 @@
 zfs-dkms
+zfsutils-linux
 less
 curl
+git
 wget
 openssh-server
 apt-transport-https
+cifs-utils
+python3-minimal

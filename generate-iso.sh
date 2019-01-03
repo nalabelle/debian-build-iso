@@ -15,4 +15,4 @@ cp -av /config/* /build/config/ || :
 lb bootstrap
 lb chroot
 lb binary
-cp live-image* /result/
+cp /build/live-image* /result/
